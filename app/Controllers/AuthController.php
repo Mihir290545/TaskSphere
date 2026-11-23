@@ -98,7 +98,7 @@ class AuthController extends Controller {
         }
 
         // First user defaults to admin if system is empty, otherwise team_member
-        $userCount = (int)User::getDb()->query("SELECT COUNT(*) FROM users")->fetchColumn();
+        $userCount = User::count();
         $role = ($userCount === 0) ? 'admin' : 'team_member';
 
         $userId = User::create([

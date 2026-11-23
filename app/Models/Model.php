@@ -7,7 +7,7 @@ use PDO;
 abstract class Model {
     protected static ?PDO $db = null;
 
-    protected static function getDb(): PDO {
+    public static function getDb(): PDO {
         if (self::$db === null) {
             self::$db = Database::connect();
         }

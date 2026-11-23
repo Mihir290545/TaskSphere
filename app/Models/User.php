@@ -18,6 +18,10 @@ class User extends Model {
         return $user ?: null;
     }
 
+    public static function count(): int {
+        return (int)self::getDb()->query("SELECT COUNT(*) FROM users")->fetchColumn();
+    }
+
     public static function create(array $data): int {
         $sql = "INSERT INTO users (name, email, password, role, status) VALUES (:name, :email, :password, :role, :status)";
         $stmt = self::getDb()->prepare($sql);
