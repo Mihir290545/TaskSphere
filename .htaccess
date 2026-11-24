@@ -1,0 +1,21 @@
+# Protect sensitive files and directories
+<FilesMatch "^\.env|\.git|composer\.(json|lock)|README\.md">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory listings
+Options -Indexes
+
+# Block direct access to storage, app, config, and database directories
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent direct access to backend and storage directories
+    RewriteRule ^(app|config|database|storage|routes|tests)(/.*)?$ - [F,L,NC]
+    RewriteRule ^\.env.*$ - [F,L,NC]
+
+    # If document root points to root folder, forward all requests to public/
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
