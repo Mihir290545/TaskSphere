@@ -24,12 +24,4 @@ $csrfToken = Security::generateCsrf();
     <div style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted);">
         Don't have an account? <a href="/register" style="color: var(--primary); font-weight: 600;">Create one</a>
     </div>
-
-    <div style="margin-top: 2rem; padding: 1rem; background: var(--bg-main); border-radius: var(--radius-md); font-size: 0.8rem; border: 1px dashed var(--border);">
-        <strong style="display: block; margin-bottom: 0.25rem;">Demo Credentials:</strong>
-        <div>• <b>Admin:</b> admin@taskflow.local</div>
-        <div>• <b>Leader:</b> leader@taskflow.local</div>
-        <div>• <b>Member:</b> member@taskflow.local</div>
-        <div style="color: var(--text-muted); margin-top: 0.25rem;">Password: <code>Password123!</code></div>
-    </div>
 </form>

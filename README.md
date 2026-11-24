@@ -117,9 +117,9 @@ Then open your browser and navigate to:
 
 ---
 
-## 👥 Demo Accounts & Credentials
+## 👥 Default Roles & Access Structure
 
-All demo accounts share the password: **`Password123!`**
+Upon importing `database/seed.sql` in a local development environment, the following sample accounts are created:
 
 | Role | Email Address | Access & Capabilities |
 | :--- | :--- | :--- |
@@ -127,6 +127,8 @@ All demo accounts share the password: **`Password123!`**
 | **Team Leader** | `leader@taskflow.local` | Manages Core Product Engineering team, creates projects & assigns tasks |
 | **Team Member** | `member@taskflow.local` | Views assigned tasks, updates Kanban status, comments on tasks |
 | **Team Member** | `liam@taskflow.local` | Active engineering member with assigned security audit tasks |
+
+> **Security Note:** In production, default sample accounts should be disabled or have their passwords rotated immediately. Never publish production passwords in documentation.
 
 ---
 

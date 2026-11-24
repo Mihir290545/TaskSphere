@@ -1,5 +1,5 @@
 # Protect sensitive files and directories
-<FilesMatch "^\.env|\.git|composer\.(json|lock)|README\.md">
+<FilesMatch "^\.env|\.git|composer\.(json|lock)|README\.md|deploy.*\.php|.*\.sql">
     Order allow,deny
     Deny from all
 </FilesMatch>
@@ -14,6 +14,7 @@ Options -Indexes
     # Prevent direct access to backend and storage directories
     RewriteRule ^(app|config|database|storage|routes|tests)(/.*)?$ - [F,L,NC]
     RewriteRule ^\.env.*$ - [F,L,NC]
+    RewriteRule ^deploy.*\.php$ - [F,L,NC]
 
     # If document root points to root folder, forward all requests to public/
     RewriteCond %{REQUEST_URI} !^/public/

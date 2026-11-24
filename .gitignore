@@ -1,4 +1,7 @@
 .env
+.env.*
+deploy_ftp.php
+database/infinityfree_import.sql
 storage/logs/*.log
 storage/uploads/*
 !storage/uploads/.gitkeep
